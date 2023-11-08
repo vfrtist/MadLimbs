@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+}
+
+:root {
+    --background: #FFF8F0;
+    --active: #FF8811;
+    --dark: #392F5A;
+    --inactive: #9dd9d2;
+}
+
+main {
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    padding: 6px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.upper {
+    height: 60%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
+    gap: 8px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 75%;
+    height: 75%;
+    margin: 16px;
+    resize: none;
+    text-align: center;
+    padding: 12px;
+}
+
+button {
+    padding: 6px 24px;
+    border-radius: 16px;
+    border: none;
+    transition: background .2s;
+    margin: 12px;
+    background: #c4eef0;
+    color: black;
+}
+
+button:disabled {
+    background: #c4eef0;
+    color: #83a6a8;
+}
+
+button:enabled:hover {
+    background: #40badf
+}
+
+#finalStory {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    height: 75%;
+    white-space: pre-wrap;
+}
+
+input[type='text'] {
+    padding: 4px;
+}
