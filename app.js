@@ -4,7 +4,7 @@ const finalStory = document.querySelector('#finalStory');
 const nextButton = document.querySelector('.next');
 const previousButton = document.querySelector('.previous');
 const frame = document.querySelector('.upper');
-const crazy = ['Title', 'Feeling', 'Short Description', 'Long Description', 'Color', 'Texture', 'Adjective', 'Any 2 Words', 'Any 3 Words', 'Silly Word', 'Number', 'Expletive', 'Verb, Past Tense', 'Verb Ending in "ING"', 'Direction', 'Action', 'Extreme Verb', 'Verb', 'Person in Room', 'Location', 'Object', 'Place', 'Plural Noun', 'Body Part', 'Noun']
+const crazy = ['Title', 'Feeling', 'Short Description', 'Long Description', 'Color', 'Texture', 'Adjective', 'Any 2 Words', 'Any 3 Words', 'Silly Word', 'Number', 'Expletive', 'Verb, Past Tense', 'Verb Ending in "ING"', 'Direction', 'Action', 'Extreme Verb', 'Verb', 'Person in Room', 'Location', 'Object', 'Place', 'Plural Noun', 'Body Part', 'Noun', 'Food', 'Shape', 'Vehicle', 'Person in Other Room', 'Something Alive', 'Adverb', 'Animal', 'Occupation', 'Exclamation', 'Something Upsetting', 'Ye Olde Phrase', 'Space Object', 'Weapon', 'Quantity', 'Some Fantasy Words', 'Landform']
 const classic = ['Adjective', 'Adjective', 'Adjective', 'Color', 'Number', 'Verb, Past Tense', 'Verb Ending in "ING"', 'Verb', 'Verb', 'Person in Room', 'Location', 'Plural Noun', 'Body Part', 'Noun', 'Noun', 'Noun']
 const skippedWords = ['a', 'an', 'the', 'of', 'are'];
 
