@@ -3,13 +3,21 @@
     padding: 0;
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 :root {
-    --background: #FFF8F0;
-    --active: #FF8811;
-    --dark: #392F5A;
-    --inactive: #9dd9d2;
+    --background: #daeeff;
+    --active: #b869dd;
+    --button-disabled: #88b5dd;
+    --button-enabled: #3488d3;
+}
+
+[data-theme="crazy"] {
+    --background: #dab5eb;
+    --active: #3488d3;
+    --button-disabled: #d388dd;
+    --button-enabled: #ca34d3;
 }
 
 main {
@@ -23,6 +31,7 @@ main {
     padding: 6px;
     text-align: center;
     box-sizing: border-box;
+    transition: background .2s;
 }
 
 .upper {
@@ -48,41 +57,51 @@ section {
 }
 
 textarea {
-    width: 75%;
-    height: 75%;
-    margin: 16px;
+    width: 60%;
+    height: 60%;
     resize: none;
     text-align: center;
     padding: 12px;
+    border: none;
 }
 
 button {
-    padding: 6px 24px;
-    border-radius: 16px;
-    border: none;
-    transition: background .2s;
+    transition: background .2s, color .2s;
     margin: 12px;
-    background: #c4eef0;
-    color: black;
+    background: var(--button-enabled);
+    color: white;
+    text-transform: capitalize;
 }
 
 button:disabled {
-    background: #c4eef0;
-    color: #83a6a8;
+    color: var(--background);
+    background-color: var(--button-disabled);
 }
 
 button:enabled:hover {
-    background: #40badf
+    background: var(--active);
 }
 
 #finalStory {
     display: flex;
     align-items: center;
-    width: 75%;
-    height: 75%;
+    width: 60%;
+    height: 60%;
     white-space: pre-wrap;
+    background: white;
+    padding: 12px;
 }
 
-input[type='text'] {
-    padding: 4px;
+.rounded {
+    padding: 6px 24px;
+    border-radius: 16px;
+    border: none;
+}
+
+input[type="text"] {
+    border: none;
+    padding: 4px 8px;
+    width: 40%;
+    min-width: 230px;
+    border-radius: 6px;
 }

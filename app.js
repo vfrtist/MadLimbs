@@ -4,12 +4,14 @@ const finalStory = document.querySelector('#finalStory');
 const nextButton = document.querySelector('.next');
 const previousButton = document.querySelector('.previous');
 const frame = document.querySelector('.upper');
-const promptList = ['Title', 'Feeling', 'Short Description', 'Long Description', 'Color', 'Texture', 'Adjective', 'Any 2 Words', 'Any 3 Words', 'Silly Word', 'Number', 'Expletive', 'Verb, Past Tense', 'Verb Ending in "ING"', 'Direction', 'Action', 'Extreme Verb', 'Verb', 'Person in Room', 'Location', 'Object', 'Place', 'Plural Noun', 'Body Part', 'Noun']
+const crazy = ['Title', 'Feeling', 'Short Description', 'Long Description', 'Color', 'Texture', 'Adjective', 'Any 2 Words', 'Any 3 Words', 'Silly Word', 'Number', 'Expletive', 'Verb, Past Tense', 'Verb Ending in "ING"', 'Direction', 'Action', 'Extreme Verb', 'Verb', 'Person in Room', 'Location', 'Object', 'Place', 'Plural Noun', 'Body Part', 'Noun']
+const classic = ['Adjective', 'Adjective', 'Adjective', 'Color', 'Number', 'Verb, Past Tense', 'Verb Ending in "ING"', 'Verb', 'Verb', 'Person in Room', 'Location', 'Plural Noun', 'Body Part', 'Noun', 'Noun', 'Noun']
 const skippedWords = ['a', 'an', 'the', 'of', 'are'];
 
 let story = ''
 let removedWords = [];
 let addedWords = {};
+let promptList
 
 function clearBox() {
     removedWords = [];
@@ -73,14 +75,21 @@ function writeStory() {
     finalStory.innerHTML = newStory;
 }
 
+function gameSettings() {
+    localStorage.getItem('theme') === 'classic' ? promptList = classic : promptList = crazy;
+}
+
+
+// -------------- Actions ---------------
 nextButton.addEventListener('click', function (e) {
     let pos = Math.round(frame.scrollLeft / frame.offsetWidth) + 1;
 
     if (pos === 1) {
         clearBox();
+        gameSettings();
         story = storyInput.value.split(' ');
         pullOutRandomWords();
-        makeInputBoxes()
+        makeInputBoxes();
     };
 
     if (pos === 2) {
@@ -104,3 +113,25 @@ storyInput.addEventListener('input', function (e) {
     e.preventDefault();
     storyInput.value != '' ? nextButton.disabled = false : nextButton.disabled = true
 });
+
+// ---------- Theme tools -----------
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+const modeButton = document.querySelector('#mode');
+
+modeButton.addEventListener('click', switchGameMode);
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    modeButton.innerHTML = localStorage.getItem('theme');
+}
+
+function switchGameMode() {
+    if (localStorage.getItem('theme') === 'crazy') {
+        document.documentElement.setAttribute('data-theme', 'classic');
+        localStorage.setItem('theme', 'classic');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'crazy');
+        localStorage.setItem('theme', 'crazy');
+    }
+    modeButton.innerHTML = localStorage.getItem('theme');
+}

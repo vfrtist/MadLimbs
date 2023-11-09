@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="classic">
 
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,10 @@
             <section id="page1">
                 <textarea name="inputbox" id="inputbox" placeholder="Enter Short Story Here to be Madlib'd"
                     class="story"></textarea>
+                <div>
+                    <label for="mode">Game Mode:</label>
+                    <button id="mode" class="rounded">Classic</button>
+                </div>
             </section>
 
             <section id="page2">
@@ -30,8 +34,8 @@
         </div>
 
         <nav class="lower">
-            <button disabled class="previous">Prev</button>
-            <button disabled class="next">Next</button>
+            <button disabled class="previous rounded">Prev</button>
+            <button disabled class="next rounded">Next</button>
         </nav>
 
     </main>
