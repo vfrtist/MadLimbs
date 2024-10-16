@@ -120,10 +120,10 @@ const modeButton = document.querySelector('#mode');
 
 modeButton.addEventListener('click', switchGameMode);
 
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    modeButton.innerHTML = localStorage.getItem('theme');
-}
+// if (currentTheme) {
+//     document.documentElement.setAttribute('data-theme', currentTheme);
+//     modeButton.innerHTML = localStorage.getItem('theme');
+// }
 
 function switchGameMode() {
     if (localStorage.getItem('theme') === 'crazy') {
